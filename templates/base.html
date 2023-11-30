@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>To do</h1>
+
+    <form class="" action="/add" method="post">
+      <div class="">
+        <label for=""title>To Title</label>
+        <input type="text" name="title" placeholder="Enter Todo...">
+        <br>
+        <button type="submit" name="Add"></button>
+
+      </div>
+
+    </form>
+
+    {% for todo in todo_ %}
+
+    <p>{{todo.id }} | {{todo.title }}</p>
+
+    {% if todo.complete == False %}
+    <span>Not completed</span>
+    {% else %}
+    <span>Complete</span>
+    {% endif %}
+
+    <a href="/update/{{todo.id}}">Done</a>
+    <a href="/complete/{{ todo.id }}">Remove</a>
+
+
+    {% endfor %}
+
+
+  </body>
+</html>
